@@ -21,10 +21,20 @@ export default async function PostsPage() {
             href={`/posts/${post.slug}`}
             className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition"
           >
-            <div className="mb-2">
+            <div className="mb-2 flex flex-wrap gap-2">
               <span className="px-2 py-1 bg-gray-100 text-gray-600 text-sm rounded">
                 {post.category}
               </span>
+              {post.level && (
+                <span className="px-2 py-1 bg-primary-100 text-primary-700 text-sm rounded font-semibold">
+                  {post.level}級
+                </span>
+              )}
+              {post.field && (
+                <span className="px-2 py-1 bg-blue-100 text-blue-700 text-sm rounded">
+                  {post.field}
+                </span>
+              )}
             </div>
             <h2 className="text-xl font-semibold mb-2 text-gray-900">
               {post.title}

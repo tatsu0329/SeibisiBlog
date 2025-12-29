@@ -103,12 +103,10 @@ export default async function PostPage({ params }: PageProps) {
         </div>
 
         {/* 記事本文 */}
-        <div className="prose prose-lg max-w-none mb-8">
-          <div className="text-gray-800 leading-relaxed">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {post.content}
-            </ReactMarkdown>
-          </div>
+        <div className="prose prose-lg max-w-none mb-8 prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-ul:text-gray-800 prose-ol:text-gray-800 prose-li:text-gray-800">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {post.content}
+          </ReactMarkdown>
         </div>
 
         {/* AdSense */}
